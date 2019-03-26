@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"github.com/kooksee/g/internal/assert"
+	"github.com/kooksee/g/assert"
 	"net"
 	"time"
 )

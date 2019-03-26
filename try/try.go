@@ -1,8 +1,8 @@
-package gotry
+package try
 
 import (
 	"errors"
-	"github.com/kooksee/g/internal/assert"
+	"github.com/kooksee/g/assert"
 	"reflect"
 )
 

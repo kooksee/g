@@ -1,7 +1,6 @@
 package pipe
 
 import (
-	"github.com/kooksee/g/internal/assert"
 	"reflect"
 	"sort"
 )
@@ -11,8 +10,8 @@ func SortBy(data interface{}, swap interface{}) interface{} {
 
 	_fn := reflect.ValueOf(swap)
 	_t := _fn.Type()
-	assert.Bool(_t.NumIn() != 2, "the func input num is more than 2(%d)", _t.NumIn())
-	assert.Bool(_t.Out(0).Kind() != reflect.Bool, "the func output type is not bool(%s)", _t.Out(0).Kind().String())
+	assert(_t.NumIn() != 2, "the func input num is more than 2(%d)", _t.NumIn())
+	assert(_t.Out(0).Kind() != reflect.Bool, "the func output type is not bool(%s)", _t.Out(0).Kind().String())
 
 	_d := reflect.ValueOf(data)
 	var _ps []reflect.Value

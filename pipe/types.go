@@ -1,7 +1,6 @@
 package pipe
 
 import (
-	"github.com/kooksee/g/internal/assert"
 	"reflect"
 )
 
@@ -21,7 +20,7 @@ func Type(p interface{}) reflect.Kind {
 func Fn(f interface{}, params ...interface{}) func() interface{} {
 	return func() interface{} {
 		t := reflect.TypeOf(f)
-		assert.Bool(t.Kind() != reflect.Func, "err -> Wrap: please input func")
+		assert(t.Kind() != reflect.Func, "err -> Wrap: please input func")
 
 		var vs []reflect.Value
 		for i, p := range params {
@@ -42,8 +41,8 @@ func Fn(f interface{}, params ...interface{}) func() interface{} {
 }
 
 func assertFn(fn interface{}) {
-	assert.Bool(fn == nil, "the func is nil")
+	assert(fn == nil, "the func is nil")
 
 	_v := reflect.ValueOf(fn)
-	assert.Bool(_v.Kind() != reflect.Func, "the params(%s) is not func type", _v.Type())
+	assert(_v.Kind() != reflect.Func, "the params(%s) is not func type", _v.Type())
 }

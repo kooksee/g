@@ -1,4 +1,4 @@
-package kweb
+package cmds
 
 import (
 	"fmt"

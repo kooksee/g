@@ -4,7 +4,7 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
-	"github.com/kooksee/pipe"
+	"github.com/kooksee/g/pipe"
 	"math/big"
 	"reflect"
 	"strings"
